@@ -1,0 +1,2 @@
+/*${meta.domainLabel}*/
+INSERT INTO BDF3_URL (DESCRIPTION_, NAME_, ICON_, PATH_, NAVIGABLE_, ORDER_, PARENT_ID_, ID_) VALUES(NULL,'${meta.domainLabel}','fa fa-file-text blue-text','com.${meta.company}.${meta.packagePrefix}.view.${meta.clazz?cap_first}.d',1,20,NULL,REPLACE(UUID(),'-',''));

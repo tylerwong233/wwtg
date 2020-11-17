@@ -1,0 +1,450 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ViewConfig>
+  <Arguments/>
+  <Context>
+    <Attribute name="initSql"/>
+    <Attribute name="menuSql"/>
+  </Context>
+  <Model>
+    <DataType name="TemplateBdf3">
+      <Property name="creationType">com.mr.qdp.entity.TemplateBdf3</Property>
+      <PropertyDef name="id">
+        <Property name="dataType">String</Property>
+      </PropertyDef>
+      <PropertyDef name="initSql">
+        <Property name="dataType">String</Property>
+        <Property name="label">初始化SQL</Property>
+      </PropertyDef>
+      <PropertyDef name="menuSql">
+        <Property name="dataType">String</Property>
+        <Property name="label">菜单SQL</Property>
+      </PropertyDef>
+      <PropertyDef name="entity">
+        <Property name="dataType">String</Property>
+        <Property name="label">genEntity</Property>
+      </PropertyDef>
+      <PropertyDef name="service">
+        <Property name="dataType">String</Property>
+        <Property name="label">genService</Property>
+      </PropertyDef>
+      <PropertyDef name="controller">
+        <Property name="dataType">String</Property>
+        <Property name="label">genController</Property>
+      </PropertyDef>
+      <PropertyDef name="view">
+        <Property name="dataType">String</Property>
+        <Property name="label">genWeb</Property>
+      </PropertyDef>
+      <PropertyDef name="importer">
+        <Property></Property>
+      </PropertyDef>
+      <PropertyDef name="createDate">
+        <Property name="dataType">Date</Property>
+      </PropertyDef>
+      <PropertyDef name="creater">
+        <Property></Property>
+      </PropertyDef>
+      <PropertyDef name="updateDate">
+        <Property name="dataType">Date</Property>
+      </PropertyDef>
+      <PropertyDef name="updater">
+        <Property></Property>
+      </PropertyDef>
+      <PropertyDef name="query">
+        <Property></Property>
+      </PropertyDef>
+      <PropertyDef name="importerVo">
+        <Property/>
+      </PropertyDef>
+    </DataType>
+  </Model>
+  <View>
+    <Property name="packages">font-awesome</Property>
+    <Property name="title">Bdf3模板信息维护</Property>
+    <AjaxAction id="aaLoadInitSql">
+      <Property name="service">bdf3templateController#loadInitSql</Property>
+    </AjaxAction>
+    <AjaxAction id="aaLoadMenuSql">
+      <Property name="service">bdf3templateController#loadMenuSql</Property>
+    </AjaxAction>
+    <AjaxAction id="aaLoadEntity">
+      <Property name="service">bdf3templateController#loadEntity</Property>
+    </AjaxAction>
+    <AjaxAction id="aaLoadService">
+      <Property name="service">bdf3templateController#loadService</Property>
+    </AjaxAction>
+    <AjaxAction id="aaLoadController">
+      <Property name="service">bdf3templateController#loadController</Property>
+    </AjaxAction>
+    <AjaxAction id="aaLoadImporter">
+      <Property name="service">bdf3templateController#loadImporter</Property>
+    </AjaxAction>
+    <AjaxAction id="aaLoadImporterVo">
+      <Property name="service">bdf3templateController#loadImporterVo</Property>
+    </AjaxAction>
+    <AjaxAction id="aaLoadView">
+      <Property name="service">bdf3templateController#loadView</Property>
+    </AjaxAction>
+    <Panel>
+      <Buttons/>
+      <Children>
+        <VerticalTabControl>
+          <ControlTab>
+            <Property name="caption">Table.sql</Property>
+            <Panel>
+              <Buttons>
+                <Button>
+                  <ClientEvent name="onClick">var initSqlCode = &quot;&quot;;&#xD;
+&#xD;
+if (null != view.get(&quot;#seInitSql&quot;).getCodeMirror().getValue()) {&#xD;
+    initSqlCode = view.get(&quot;#seInitSql&quot;).getCodeMirror().getValue()&#xD;
+};&#xD;
+&#xD;
+var parameter = {&#xD;
+    &quot;initSql&quot;: initSqlCode&#xD;
+}&#xD;
+dorado.MessageBox.confirm(&quot;您真的要保存吗?&quot;, function () {&#xD;
+    view.get(&quot;#aaSaveInitSql&quot;).set(&quot;parameter&quot;, parameter).execute(function (result) {&#xD;
+        &#xD;
+&#xD;
+    });&#xD;
+});</ClientEvent>
+                  <Property name="caption">保存</Property>
+                  <Property name="iconClass">fa fa-save</Property>
+                  <Property name="ui">highlight</Property>
+                </Button>
+              </Buttons>
+              <Children>
+                <SourceEditor id="seInitSql">
+                  <ClientEvent name="onReady">view.get(&quot;#aaLoadInitSql&quot;).execute(function (result) {&#xD;
+   self.getCodeMirror().setValue(result);&#xD;
+});&#xD;
+</ClientEvent>
+                  <Property name="gutter">true</Property>
+                  <Property name="lineNumbers">true</Property>
+                  <Property name="theme">monokai</Property>
+                  <Property name="language">mysql</Property>
+                  <Property name="lazyInit">true</Property>
+                </SourceEditor>
+              </Children>
+              <Tools/>
+            </Panel>
+          </ControlTab>
+          <ControlTab>
+            <Property name="caption">Menu.sql</Property>
+            <Panel>
+              <Buttons>
+                <Button>
+                  <ClientEvent name="onClick">var menuSqlCode = &quot;&quot;;&#xD;
+&#xD;
+if (null != view.get(&quot;#seMenuSql&quot;).getCodeMirror().getValue()) {&#xD;
+    menuSqlCode = view.get(&quot;#seMenuSql&quot;).getCodeMirror().getValue()&#xD;
+};&#xD;
+&#xD;
+var parameter = {&#xD;
+    &quot;menuSql&quot;: menuSqlCode&#xD;
+}&#xD;
+dorado.MessageBox.confirm(&quot;您真的要保存吗?&quot;, function () {&#xD;
+    view.get(&quot;#aaSaveMenuSql&quot;).set(&quot;parameter&quot;, parameter).execute(function (result) {&#xD;
+        &#xD;
+&#xD;
+    });&#xD;
+});</ClientEvent>
+                  <Property name="caption">保存</Property>
+                  <Property name="iconClass">fa fa-save</Property>
+                  <Property name="ui">highlight</Property>
+                </Button>
+              </Buttons>
+              <Children>
+                <SourceEditor id="seMenuSql">
+                  <ClientEvent name="onReady">view.get(&quot;#aaLoadMenuSql&quot;).execute(function (result) {&#xD;
+   self.getCodeMirror().setValue(result);&#xD;
+});&#xD;
+</ClientEvent>
+                  <Property name="gutter">true</Property>
+                  <Property name="lineNumbers">true</Property>
+                  <Property name="language">mysql</Property>
+                  <Property name="theme">monokai</Property>
+                </SourceEditor>
+              </Children>
+              <Tools/>
+            </Panel>
+          </ControlTab>
+          <ControlTab>
+            <Property name="caption">Entity.java</Property>
+            <Panel>
+              <Buttons>
+                <Button>
+                  <ClientEvent name="onClick">var entityCode = &quot;&quot;;&#xD;
+&#xD;
+if (null != view.get(&quot;#seEntity&quot;).getCodeMirror().getValue()) {&#xD;
+    entityCode = view.get(&quot;#seEntity&quot;).getCodeMirror().getValue()&#xD;
+};&#xD;
+&#xD;
+var parameter = {&#xD;
+    &quot;entity&quot;: entityCode&#xD;
+}&#xD;
+dorado.MessageBox.confirm(&quot;您真的要保存吗?&quot;, function () {&#xD;
+    view.get(&quot;#aaSaveEntity&quot;).set(&quot;parameter&quot;, parameter).execute(function (result) {&#xD;
+        &#xD;
+&#xD;
+    });&#xD;
+});</ClientEvent>
+                  <Property name="caption">保存</Property>
+                  <Property name="iconClass">fa fa-save</Property>
+                  <Property name="ui">highlight</Property>
+                </Button>
+              </Buttons>
+              <Children>
+                <SourceEditor id="seEntity">
+                  <ClientEvent name="onReady">view.get(&quot;#aaLoadEntity&quot;).execute(function (result) {&#xD;
+   self.getCodeMirror().setValue(result);&#xD;
+});&#xD;
+</ClientEvent>
+                  <Property name="gutter">true</Property>
+                  <Property name="lineNumbers">true</Property>
+                  <Property name="theme">monokai</Property>
+                  <Property name="language">mysql</Property>
+                </SourceEditor>
+              </Children>
+              <Tools/>
+            </Panel>
+          </ControlTab>
+          <ControlTab>
+            <Property name="caption">Service.java</Property>
+            <Panel>
+              <Buttons>
+                <Button>
+                  <ClientEvent name="onClick">var serviceCode = &quot;&quot;;&#xD;
+&#xD;
+if (null != view.get(&quot;#seService&quot;).getCodeMirror().getValue()) {&#xD;
+    serviceCode = view.get(&quot;#seService&quot;).getCodeMirror().getValue()&#xD;
+};&#xD;
+&#xD;
+var parameter = {&#xD;
+    &quot;service&quot;: serviceCode&#xD;
+}&#xD;
+dorado.MessageBox.confirm(&quot;您真的要保存吗?&quot;, function () {&#xD;
+    view.get(&quot;#aaSaveService&quot;).set(&quot;parameter&quot;, parameter).execute(function (result) {&#xD;
+        &#xD;
+&#xD;
+    });&#xD;
+});</ClientEvent>
+                  <Property name="caption">保存</Property>
+                  <Property name="iconClass">fa fa-save</Property>
+                  <Property name="ui">highlight</Property>
+                </Button>
+              </Buttons>
+              <Children>
+                <SourceEditor id="seService">
+                  <ClientEvent name="onReady">view.get(&quot;#aaLoadService&quot;).execute(function (result) {&#xD;
+   self.getCodeMirror().setValue(result);&#xD;
+});&#xD;
+</ClientEvent>
+                  <Property name="gutter">true</Property>
+                  <Property name="lineNumbers">true</Property>
+                  <Property name="theme">monokai</Property>
+                  <Property name="language">mysql</Property>
+                </SourceEditor>
+              </Children>
+              <Tools/>
+            </Panel>
+          </ControlTab>
+          <ControlTab>
+            <Property name="caption">Controller.java</Property>
+            <Panel>
+              <Buttons>
+                <Button>
+                  <ClientEvent name="onClick">var controllerCode = &quot;&quot;;&#xD;
+&#xD;
+if (null != view.get(&quot;#seController&quot;).getCodeMirror().getValue()) {&#xD;
+    controllerCode = view.get(&quot;#seController&quot;).getCodeMirror().getValue()&#xD;
+};&#xD;
+&#xD;
+var parameter = {&#xD;
+    &quot;controller&quot;: controllerCode&#xD;
+}&#xD;
+dorado.MessageBox.confirm(&quot;您真的要保存吗?&quot;, function () {&#xD;
+    view.get(&quot;#aaSaveController&quot;).set(&quot;parameter&quot;, parameter).execute(function (result) {&#xD;
+        &#xD;
+&#xD;
+    });&#xD;
+});</ClientEvent>
+                  <Property name="caption">保存</Property>
+                  <Property name="iconClass">fa fa-save</Property>
+                  <Property name="ui">highlight</Property>
+                </Button>
+              </Buttons>
+              <Children>
+                <SourceEditor id="seController">
+                  <ClientEvent name="onReady">view.get(&quot;#aaLoadController&quot;).execute(function (result) {&#xD;
+   self.getCodeMirror().setValue(result);&#xD;
+});&#xD;
+</ClientEvent>
+                  <Property name="gutter">true</Property>
+                  <Property name="lineNumbers">true</Property>
+                  <Property name="theme">monokai</Property>
+                  <Property name="language">mysql</Property>
+                </SourceEditor>
+              </Children>
+              <Tools/>
+            </Panel>
+          </ControlTab>
+          <ControlTab>
+            <Property name="caption">Importer.java</Property>
+            <Panel>
+              <Buttons>
+                <Button>
+                  <ClientEvent name="onClick">var importerCode = &quot;&quot;;&#xD;
+&#xD;
+if (null != view.get(&quot;#seImporter&quot;).getCodeMirror().getValue()) {&#xD;
+    importerCode = view.get(&quot;#seImporter&quot;).getCodeMirror().getValue()&#xD;
+};&#xD;
+&#xD;
+var parameter = {&#xD;
+    &quot;importer&quot;: importerCode&#xD;
+}&#xD;
+dorado.MessageBox.confirm(&quot;您真的要保存吗?&quot;, function () {&#xD;
+    view.get(&quot;#aaSaveImporter&quot;).set(&quot;parameter&quot;, parameter).execute(function (result) {&#xD;
+        &#xD;
+&#xD;
+    });&#xD;
+});</ClientEvent>
+                  <Property name="caption">保存</Property>
+                  <Property name="iconClass">fa fa-save</Property>
+                  <Property name="ui">highlight</Property>
+                </Button>
+              </Buttons>
+              <Children>
+                <SourceEditor id="seImporter">
+                  <ClientEvent name="onReady">view.get(&quot;#aaLoadImporter&quot;).execute(function (result) {&#xD;
+   self.getCodeMirror().setValue(result);&#xD;
+});&#xD;
+</ClientEvent>
+                  <Property name="gutter">true</Property>
+                  <Property name="lineNumbers">true</Property>
+                  <Property name="theme">monokai</Property>
+                  <Property name="language">mysql</Property>
+                </SourceEditor>
+              </Children>
+              <Tools/>
+            </Panel>
+          </ControlTab>
+          <ControlTab>
+            <Property name="caption">ImporterVo.java</Property>
+            <Panel>
+              <Buttons>
+                <Button>
+                  <ClientEvent name="onClick">var importerVoCode = &quot;&quot;;&#xD;
+&#xD;
+if (null != view.get(&quot;#seImporterVo&quot;).getCodeMirror().getValue()) {&#xD;
+    importerVoCode = view.get(&quot;#seImporterVo&quot;).getCodeMirror().getValue()&#xD;
+};&#xD;
+&#xD;
+var parameter = {&#xD;
+    &quot;importerVo&quot;: importerVoCode&#xD;
+}&#xD;
+dorado.MessageBox.confirm(&quot;您真的要保存吗?&quot;, function () {&#xD;
+    view.get(&quot;#aaSaveImporterVo&quot;).set(&quot;parameter&quot;, parameter).execute(function (result) {&#xD;
+        &#xD;
+&#xD;
+    });&#xD;
+});</ClientEvent>
+                  <Property name="caption">保存</Property>
+                  <Property name="iconClass">fa fa-save</Property>
+                  <Property name="ui">highlight</Property>
+                </Button>
+              </Buttons>
+              <Children>
+                <SourceEditor id="seImporterVo">
+                  <ClientEvent name="onReady">view.get(&quot;#aaLoadImporterVo&quot;).execute(function (result) {&#xD;
+   self.getCodeMirror().setValue(result);&#xD;
+});&#xD;
+</ClientEvent>
+                  <Property name="gutter">true</Property>
+                  <Property name="lineNumbers">true</Property>
+                  <Property name="theme">monokai</Property>
+                  <Property name="language">mysql</Property>
+                </SourceEditor>
+              </Children>
+              <Tools/>
+            </Panel>
+          </ControlTab>
+          <ControlTab>
+            <Property name="caption">Web.view.xml</Property>
+            <Panel>
+              <Buttons>
+                <Button>
+                  <ClientEvent name="onClick">var viewCode = &quot;&quot;;&#xD;
+&#xD;
+if (null != view.get(&quot;#seView&quot;).getCodeMirror().getValue()) {&#xD;
+    viewCode = view.get(&quot;#seView&quot;).getCodeMirror().getValue()&#xD;
+};&#xD;
+&#xD;
+var parameter = {&#xD;
+    &quot;view&quot;: viewCode&#xD;
+}&#xD;
+dorado.MessageBox.confirm(&quot;您真的要保存吗?&quot;, function () {&#xD;
+    view.get(&quot;#aaSaveView&quot;).set(&quot;parameter&quot;, parameter).execute(function (result) {&#xD;
+        &#xD;
+&#xD;
+    });&#xD;
+});</ClientEvent>
+                  <Property name="caption">保存</Property>
+                  <Property name="iconClass">fa fa-save</Property>
+                  <Property name="ui">highlight</Property>
+                </Button>
+              </Buttons>
+              <Children>
+                <SourceEditor id="seView">
+                  <ClientEvent name="onReady">view.get(&quot;#aaLoadView&quot;).execute(function (result) {&#xD;
+   self.getCodeMirror().setValue(result);&#xD;
+});&#xD;
+</ClientEvent>
+                  <Property name="gutter">true</Property>
+                  <Property name="lineNumbers">true</Property>
+                  <Property name="theme">monokai</Property>
+                  <Property name="language">mysql</Property>
+                </SourceEditor>
+              </Children>
+              <Tools/>
+            </Panel>
+          </ControlTab>
+        </VerticalTabControl>
+      </Children>
+      <Tools/>
+    </Panel>
+    <AjaxAction id="aaSaveInitSql">
+      <Property name="service">bdf3templateController#saveInitSql</Property>
+      <Property name="successMessage">操作成功</Property>
+    </AjaxAction>
+    <AjaxAction id="aaSaveMenuSql">
+      <Property name="service">bdf3templateController#saveMenuSql</Property>
+      <Property name="successMessage">操作成功</Property>
+    </AjaxAction>
+    <AjaxAction id="aaSaveEntity">
+      <Property name="service">bdf3templateController#saveEntity</Property>
+      <Property name="successMessage">操作成功</Property>
+    </AjaxAction>
+    <AjaxAction id="aaSaveService">
+      <Property name="service">bdf3templateController#saveService</Property>
+      <Property name="successMessage">操作成功</Property>
+    </AjaxAction>
+    <AjaxAction id="aaSaveController">
+      <Property name="service">bdf3templateController#saveController</Property>
+      <Property name="successMessage">操作成功</Property>
+    </AjaxAction>
+    <AjaxAction id="aaSaveImporter">
+      <Property name="service">bdf3templateController#saveImporter</Property>
+      <Property name="successMessage">操作成功</Property>
+    </AjaxAction>
+    <AjaxAction id="aaSaveImporterVo">
+      <Property name="service">bdf3templateController#saveImporterVo</Property>
+      <Property name="successMessage">操作成功</Property>
+    </AjaxAction>
+    <AjaxAction id="aaSaveView">
+      <Property name="service">bdf3templateController#saveView</Property>
+      <Property name="successMessage">操作成功</Property>
+    </AjaxAction>
+  </View>
+</ViewConfig>

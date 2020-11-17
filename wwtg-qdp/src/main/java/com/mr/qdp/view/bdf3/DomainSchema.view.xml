@@ -1,0 +1,924 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ViewConfig>
+  <Arguments/>
+  <Context/>
+  <Model>
+    <DataType name="DomainSchemaBdf3">
+      <Property name="creationType">com.mr.qdp.entity.DomainSchemaBdf3</Property>
+      <PropertyDef name="id">
+        <Property name="dataType">String</Property>
+      </PropertyDef>
+      <PropertyDef name="projectId">
+        <Property name="dataType">String</Property>
+        <Property name="label">项目ID</Property>
+      </PropertyDef>
+      <PropertyDef name="domainName">
+        <Property name="dataType">String</Property>
+        <Property name="label">模型英文名称</Property>
+        <Property name="required">true</Property>
+      </PropertyDef>
+      <PropertyDef name="domainLabel">
+        <Property name="dataType">String</Property>
+        <Property name="label">模型中文名称</Property>
+        <Property name="required">true</Property>
+      </PropertyDef>
+      <PropertyDef name="description">
+        <Property name="dataType">String</Property>
+        <Property name="label">描述</Property>
+      </PropertyDef>
+      <PropertyDef name="initSql">
+        <Property name="dataType">String</Property>
+        <Property name="label">初始化SQL</Property>
+      </PropertyDef>
+      <PropertyDef name="menuSql">
+        <Property name="dataType">String</Property>
+        <Property name="label">菜单SQL</Property>
+      </PropertyDef>
+      <PropertyDef name="genEntity">
+        <Property name="dataType">String</Property>
+        <Property name="label">genEntity</Property>
+      </PropertyDef>
+      <PropertyDef name="genService">
+        <Property name="dataType">String</Property>
+        <Property name="label">genService</Property>
+      </PropertyDef>
+      <PropertyDef name="genController">
+        <Property name="dataType">String</Property>
+        <Property name="label">genController</Property>
+      </PropertyDef>
+      <PropertyDef name="genWeb">
+        <Property name="dataType">String</Property>
+        <Property name="label">genWeb</Property>
+      </PropertyDef>
+      <PropertyDef name="genImporter">
+        <Property></Property>
+        <Property name="label">genImporter</Property>
+      </PropertyDef>
+      <PropertyDef name="genImporterVo">
+        <Property></Property>
+      </PropertyDef>
+    </DataType>
+    <DataType name="Condition">
+      <PropertyDef name="projectId">
+        <Property name="dataType">String</Property>
+        <Property name="label">项目ID</Property>
+      </PropertyDef>
+      <PropertyDef name="domainName">
+        <Property name="dataType">String</Property>
+        <Property name="label">模型英文名称</Property>
+      </PropertyDef>
+      <PropertyDef name="domainLabel">
+        <Property name="dataType">String</Property>
+        <Property name="label">模型中文名称</Property>
+      </PropertyDef>
+      <PropertyDef name="description">
+        <Property name="dataType">String</Property>
+        <Property name="label">描述</Property>
+      </PropertyDef>
+      <PropertyDef name="initSql">
+        <Property name="dataType">String</Property>
+        <Property name="label">初始化SQL</Property>
+      </PropertyDef>
+      <PropertyDef name="menuSql">
+        <Property name="dataType">String</Property>
+        <Property name="label">菜单SQL</Property>
+      </PropertyDef>
+      <PropertyDef name="genEntity">
+        <Property name="dataType">String</Property>
+        <Property name="label">genEntity</Property>
+      </PropertyDef>
+      <PropertyDef name="genService">
+        <Property name="dataType">String</Property>
+        <Property name="label">genService</Property>
+      </PropertyDef>
+      <PropertyDef name="genController">
+        <Property name="dataType">String</Property>
+        <Property name="label">genController</Property>
+      </PropertyDef>
+      <PropertyDef name="genWeb">
+        <Property name="dataType">String</Property>
+        <Property name="label">genWeb</Property>
+      </PropertyDef>
+    </DataType>
+    <DataType name="Domain">
+      <Property name="creationType">com.mr.qdp.entity.Domain</Property>
+      <PropertyDef name="id">
+        <Property name="dataType">String</Property>
+      </PropertyDef>
+      <PropertyDef name="domainSchemaId">
+        <Property name="dataType">String</Property>
+        <Property name="label">领域模型定义ID</Property>
+        <Property name="mapping">
+          <Property name="mapValues">${dorado.getDataProvider(&quot;domain#getDomainSchemaBdf3KvMap&quot;).getResult()}</Property>
+        </Property>
+      </PropertyDef>
+      <PropertyDef name="name">
+        <Property name="dataType">String</Property>
+        <Property name="label">C属性名称</Property>
+        <Property name="required">true</Property>
+      </PropertyDef>
+      <PropertyDef name="dataType">
+        <Property name="dataType">String</Property>
+        <Property name="label">C类型</Property>
+        <Property name="required">true</Property>
+      </PropertyDef>
+      <PropertyDef name="label">
+        <Property name="dataType">String</Property>
+        <Property name="label">R标题/注释</Property>
+        <Property name="required">true</Property>
+      </PropertyDef>
+      <PropertyDef name="example">
+        <Property name="dataType">String</Property>
+        <Property name="label">R举例数据</Property>
+      </PropertyDef>
+      <PropertyDef name="description">
+        <Property name="dataType">String</Property>
+        <Property name="label">R数据说明</Property>
+      </PropertyDef>
+      <PropertyDef name="searchCondition">
+        <Property name="dataType">String</Property>
+        <Property name="label">R查询条件?</Property>
+      </PropertyDef>
+      <PropertyDef name="searchResult">
+        <Property name="dataType">String</Property>
+        <Property name="label">R查询结果?</Property>
+      </PropertyDef>
+      <PropertyDef name="editable">
+        <Property name="dataType">String</Property>
+        <Property name="label">R编辑展现?</Property>
+      </PropertyDef>
+      <PropertyDef name="required">
+        <Property name="dataType">String</Property>
+        <Property name="label">R必填字段?</Property>
+      </PropertyDef>
+      <PropertyDef name="imported">
+        <Property name="dataType">String</Property>
+        <Property name="label">R是否导入?</Property>
+      </PropertyDef>
+      <PropertyDef name="fromEnum">
+        <Property name="dataType">String</Property>
+        <Property name="label">C枚举值</Property>
+      </PropertyDef>
+      <PropertyDef name="fromTable">
+        <Property name="dataType">String</Property>
+        <Property name="label">C关联表</Property>
+      </PropertyDef>
+      <PropertyDef name="format">
+        <Property name="dataType">String</Property>
+        <Property name="label">特殊格式</Property>
+      </PropertyDef>
+      <PropertyDef name="columnName">
+        <Property name="dataType">String</Property>
+        <Property name="label">表中列名</Property>
+      </PropertyDef>
+      <PropertyDef name="lookupName">
+        <Property name="dataType">String</Property>
+        <Property name="label">枚举名称</Property>
+      </PropertyDef>
+      <PropertyDef name="staticLookupXml">
+        <Property name="dataType">String</Property>
+        <Property name="label">静态LOOKUP_XML</Property>
+      </PropertyDef>
+      <PropertyDef name="dbLookupXml">
+        <Property name="dataType">String</Property>
+        <Property name="label">表LOOKUP_XML</Property>
+      </PropertyDef>
+      <PropertyDef name="dbEntityName">
+        <Property name="dataType">String</Property>
+        <Property name="label">关联表相关实体</Property>
+      </PropertyDef>
+      <PropertyDef name="dbEntityKey">
+        <Property name="dataType">String</Property>
+        <Property name="label">关联表相关实体KEY</Property>
+      </PropertyDef>
+      <PropertyDef name="dbEntityDisplayValue">
+        <Property name="dataType">String</Property>
+        <Property name="label">关联表相关实体显示属性</Property>
+      </PropertyDef>
+      <PropertyDef name="columnLength">
+        <Property name="dataType">String</Property>
+        <Property name="label">R表字段长度</Property>
+      </PropertyDef>
+      <PropertyDef name="uniqueValue">
+        <Property name="dataType">String</Property>
+        <Property name="label">R联合唯一?</Property>
+      </PropertyDef>
+      <PropertyDef name="extTableSaveId">
+        <Property name="dataType">String</Property>
+        <Property name="label">C关联表保存ID</Property>
+      </PropertyDef>
+      <PropertyDef name="fieldOrder">
+        <Property name="dataType">Integer</Property>
+        <Property name="label">排序</Property>
+        <Property name="required">true</Property>
+      </PropertyDef>
+      <PropertyDef name="comment">
+        <Property name="dataType">String</Property>
+        <Property name="label">表注释</Property>
+      </PropertyDef>
+      <PropertyDef name="refTableDomainSchemaBdf3Id">
+        <Property name="dataType">String</Property>
+        <Property name="label">领域模型定义ID</Property>
+      </PropertyDef>
+    </DataType>
+  </Model>
+  <View>
+    <Property name="packages">font-awesome</Property>
+    <Property name="title">领域模型定义信息维护</Property>
+    <DataSet id="dataSetDomainSchemaBdf3">
+      <Property name="dataProvider">domainSchemaController#query</Property>
+      <Property name="pageSize">20</Property>
+      <Property name="dataType">[DomainSchemaBdf3]</Property>
+      <Property name="loadMode">lazy</Property>
+    </DataSet>
+    <UpdateAction id="updateAction">
+      <Property name="successMessage">保存成功!</Property>
+      <Property name="executingMessage">正在保存...</Property>
+      <Property name="dataResolver">domainSchemaController#save</Property>
+      <UpdateItem>
+        <Property name="dataSet">dataSetDomainSchemaBdf3</Property>
+      </UpdateItem>
+    </UpdateAction>
+    <AutoForm id="formCondition">
+      <Property name="labelWidth">100</Property>
+      <Property name="cols">*,*,*</Property>
+      <Property name="createPrivateDataSet">true</Property>
+      <Property name="dataType">Condition</Property>
+      <AutoFormElement>
+        <Property name="name">domainName</Property>
+        <Property name="label">模型英文名称</Property>
+        <Editor/>
+      </AutoFormElement>
+      <AutoFormElement>
+        <Property name="name">domainLabel</Property>
+        <Property name="label">模型中文名称</Property>
+        <Editor/>
+      </AutoFormElement>
+      <AutoFormElement>
+        <Property name="name">description</Property>
+        <Property name="label">描述</Property>
+        <Editor/>
+      </AutoFormElement>
+    </AutoForm>
+    <ToolBar>
+      <ToolBarButton>
+        <ClientEvent name="onClick">var data = view.get(&quot;#formCondition.entity&quot;);&#xD;
+with (view.get(&quot;#dataSetDomainSchemaBdf3&quot;)){&#xD;
+set(&quot;parameter&quot;, data);&#xD;
+flushAsync();&#xD;
+}</ClientEvent>
+        <Property name="caption">查询</Property>
+        <Property name="iconClass">fa fa-search</Property>
+      </ToolBarButton>
+      <Separator>
+        <Property name="tip">跳窗编辑</Property>
+      </Separator>
+      <ToolBarButton>
+        <ClientEvent name="onClick">var datas = view.get(&quot;#dataSetDomainSchemaBdf3.data&quot;);&#xD;
+datas.insert();&#xD;
+view.get(&quot;#dialogDomainSchemaBdf3&quot;).show();&#xD;
+arg.processDefault=false;</ClientEvent>
+        <Property name="caption">添加</Property>
+        <Property name="iconClass">fa fa-plus</Property>
+      </ToolBarButton>
+      <ToolBarButton>
+        <ClientEvent name="onClick">var data=view.get(&quot;#dataSetDomainSchemaBdf3.data&quot;);&#xD;
+if(data.current){&#xD;
+view.id(&quot;dialogDomainSchemaBdf3&quot;).show();&#xD;
+}else{&#xD;
+dorado.MessageBox.alert(&quot;当前表没有信息可供编辑!&quot;);&#xD;
+}</ClientEvent>
+        <Property name="caption">查看修改</Property>
+        <Property name="iconClass">fa fa-pencil-square-o</Property>
+      </ToolBarButton>
+      <Separator>
+        <Property name="tip">EXCEL导入</Property>
+      </Separator>
+      <ToolBarButton>
+        <ClientEvent name="onClick" signature="self,arg,autoUploadProgressBar,dialogImportInit">autoUploadProgressBar.set(&quot;value&quot;, '0');&#xD;
+dialogImportInit.show();</ClientEvent>
+        <Property name="caption">导入</Property>
+        <Property name="iconClass">fa fa-cloud-upload</Property>
+      </ToolBarButton>
+      <Fill/>
+      <ToolBarButton>
+        <Property name="caption">导出</Property>
+        <Property name="iconClass">fa fa-cloud-download</Property>
+        <Property name="action">exportAction</Property>
+      </ToolBarButton>
+      <DataPilot>
+        <Property name="dataSet">dataSetDomainSchemaBdf3</Property>
+        <Property name="itemCodes">pages,pageSize</Property>
+      </DataPilot>
+      <ToolBarButton>
+        <ClientEvent name="onClick">var updateAction=view.get(&quot;#updateAction&quot;);&#xD;
+var selection = view.get(&quot;#domainSchemaBdf3DataGrid&quot;).get(&quot;selection&quot;);&#xD;
+&#xD;
+if(0 != selection.length) {&#xD;
+dorado.MessageBox.confirm(&quot;您真的要保存吗?&quot;,function(){&#xD;
+&#xD;
+for (var i = 0; i &lt; selection.length; i++) {&#xD;
+var select = selection[i];&#xD;
+select.remove();&#xD;
+}&#xD;
+&#xD;
+updateAction.execute();&#xD;
+view.get(&quot;#dataSetDomainSchemaBdf3&quot;).flushAsync(); &#xD;
+})&#xD;
+&#xD;
+} else {&#xD;
+dorado.MessageBox.alert(&quot;请选择需要删除的记录！&quot;);&#xD;
+}&#xD;
+&#xD;
+&#xD;
+</ClientEvent>
+        <Property name="iconClass">fa fa-trash-o</Property>
+        <Property name="caption">删除</Property>
+      </ToolBarButton>
+    </ToolBar>
+    <ToolBar>
+      <Fill/>
+      <ToolBarButton>
+        <ClientEvent name="onClick">var selection = view.get(&quot;#domainSchemaBdf3DataGrid&quot;).get(&quot;selection&quot;);&#xD;
+var isExcuteInitSql=view.get(&quot;#initSqlButton&quot;).get(&quot;toggled&quot;);&#xD;
+var isExcuteMenuSql=view.get(&quot;#menuSqlButton&quot;).get(&quot;toggled&quot;);&#xD;
+ &#xD;
+&#xD;
+if(0 != selection.length) {&#xD;
+	var parameter = {&#xD;
+		&quot;selectList&quot; : selection,&#xD;
+		&quot;isExcuteInitSql&quot; : Number(isExcuteInitSql),&#xD;
+		&quot;isExcuteMenuSql&quot; : Number(isExcuteMenuSql)&#xD;
+	}&#xD;
+	var genCodeCloudAjaxAction = view.get(&quot;#genCodeCloudAjaxAction&quot;); &#xD;
+	dorado.MessageBox.confirm(&quot;您真的要执行吗?&quot;,function() {&#xD;
+		genCodeCloudAjaxAction.set(&quot;parameter&quot;, parameter).execute(function(result) {&#xD;
+			dorado.widget.NotifyTipManager.notify(result);&#xD;
+			view.get(&quot;#dataSetDomainSchemaBdf3&quot;).flushAsync();&#xD;
+		});&#xD;
+	});&#xD;
+} else {&#xD;
+	dorado.MessageBox.alert(&quot;请选择需要生成的任务！&quot;);&#xD;
+}&#xD;
+&#xD;
+</ClientEvent>
+        <Property name="caption">云生成</Property>
+        <Property name="iconClass">fa fa-btc</Property>
+      </ToolBarButton>
+      <ToolBarButton id="initSqlButton">
+        <Property name="caption">建表</Property>
+        <Property name="iconClass">fa fa-rub</Property>
+        <Property name="toggleable">true</Property>
+      </ToolBarButton>
+      <ToolBarButton id="menuSqlButton">
+        <Property name="caption">加菜单</Property>
+        <Property name="iconClass">fa fa-krw</Property>
+        <Property name="toggleable">true</Property>
+      </ToolBarButton>
+      <ToolBarButton>
+        <ClientEvent name="onClick">var selection = view.get(&quot;#domainSchemaBdf3DataGrid&quot;).get(&quot;selection&quot;);&#xD;
+&#xD;
+if(0 != selection.length) {&#xD;
+	var parameter = {&#xD;
+		&quot;selectList&quot; : selection&#xD;
+	}&#xD;
+	var getEnumSqlAjaxAction = view.get(&quot;#getEnumSqlAjaxAction&quot;);  &#xD;
+	 getEnumSqlAjaxAction.set(&quot;parameter&quot;, parameter).execute(function(result) { &#xD;
+			view.get(&quot;#dialogEnumSql&quot;).show();&#xD;
+			var json=JSON.parse(result);&#xD;
+			view.get(&quot;#enumSql1&quot;).set(&quot;text&quot;,json.type);&#xD;
+			view.get(&quot;#enumSql2&quot;).set(&quot;text&quot;,json.key);&#xD;
+			view.get(&quot;#enumSql3&quot;).set(&quot;text&quot;,json.value);&#xD;
+			view.get(&quot;#enumSql4&quot;).set(&quot;text&quot;,json.desc);&#xD;
+		}); &#xD;
+ }</ClientEvent>
+        <Property name="caption">ENUM</Property>
+        <Property name="iconClass">fa fa-try</Property>
+      </ToolBarButton>
+    </ToolBar>
+    <DataGrid id="domainSchemaBdf3DataGrid">
+      <ClientEvent name="onDoubleClick">var domainSchemaId =self.getCurrentItem().get('id');&#xD;
+var parameter={&#xD;
+	&quot;domainSchemaId&quot;:domainSchemaId&#xD;
+}&#xD;
+var subView = view.get(&quot;#subViewDomain&quot;).get(&quot;subView&quot;);&#xD;
+var dsDomain=subView.get(&quot;#dataSetDomain&quot;);&#xD;
+dsDomain.set('parameter',parameter);&#xD;
+view.get(&quot;#dialogDomain&quot;).show();&#xD;
+dsDomain.flushAsync();&#xD;
+&#xD;
+&#xD;
+subView.get(&quot;context&quot;).set(&quot;domainSchemaId&quot;,domainSchemaId);</ClientEvent>
+      <Property name="dataSet">dataSetDomainSchemaBdf3</Property>
+      <Property name="dataType">DomainSchemaBdf3</Property>
+      <Property name="selectionMode">multiRows</Property>
+      <Property name="readOnly">true</Property>
+      <RowSelectorColumn/>
+      <RowNumColumn/>
+      <DataColumn name="模型英文名称">
+        <Property name="caption">模型英文名称</Property>
+        <Property name="property">domainName</Property>
+        <Property name="align">center</Property>
+      </DataColumn>
+      <DataColumn name="模型中文名称">
+        <Property name="caption">模型中文名称</Property>
+        <Property name="property">domainLabel</Property>
+        <Property name="align">center</Property>
+      </DataColumn>
+      <DataColumn name="描述">
+        <Property name="caption">描述</Property>
+        <Property name="property">description</Property>
+        <Property name="align">center</Property>
+      </DataColumn>
+      <DataColumn name="初始化SQL">
+        <Property name="caption">初始化SQL</Property>
+        <Property name="property">initSql</Property>
+        <Property name="align">center</Property>
+      </DataColumn>
+      <DataColumn name="菜单SQL">
+        <Property name="caption">菜单SQL</Property>
+        <Property name="property">menuSql</Property>
+        <Property name="align">center</Property>
+      </DataColumn>
+      <DataColumn name="genEntity">
+        <Property name="caption">genEntity</Property>
+        <Property name="property">genEntity</Property>
+        <Property name="align">center</Property>
+      </DataColumn>
+      <DataColumn name="genService">
+        <Property name="caption">genService</Property>
+        <Property name="property">genService</Property>
+        <Property name="align">center</Property>
+      </DataColumn>
+      <DataColumn name="genController">
+        <Property name="caption">genController</Property>
+        <Property name="property">genController</Property>
+        <Property name="align">center</Property>
+      </DataColumn>
+      <DataColumn name="genWeb">
+        <Property name="caption">genWeb</Property>
+        <Property name="property">genWeb</Property>
+        <Property name="align">center</Property>
+      </DataColumn>
+      <DataColumn name="genImporter">
+        <Property name="property">genImporter</Property>
+        <Property name="align">center</Property>
+      </DataColumn>
+    </DataGrid>
+    <Dialog id="dialogDomainSchemaBdf3">
+      <ClientEvent name="onClose">var data=view.id(&quot;dataSetDomainSchemaBdf3&quot;).getData();&#xD;
+data.cancel();&#xD;
+</ClientEvent>
+      <Property name="center">true</Property>
+      <Property name="maximizeable">true</Property>
+      <Property name="maximized">true</Property>
+      <Property name="modal">true</Property>
+      <Property name="closeable">true</Property>
+      <Property name="caption">领域模型定义</Property>
+      <Buttons>
+        <Button>
+          <ClientEvent name="onClick">var data=view.id(&quot;dataSetDomainSchemaBdf3&quot;).getData();&#xD;
+var dialog=view.id(&quot;dialogDomainSchemaBdf3&quot;);&#xD;
+dorado.MessageBox.confirm(&quot;您真的要取消当前操作吗？&quot;,function(){&#xD;
+data.cancel();&#xD;
+dialog.hide();&#xD;
+});</ClientEvent>
+          <Property name="caption">取消</Property>
+          <Property name="iconClass">fa fa-share</Property>
+        </Button>
+        <Button>
+          <ClientEvent name="onClick">var dialog=view.id(&quot;dialogDomainSchemaBdf3&quot;);&#xD;
+var action=view.id(&quot;updateAction&quot;);&#xD;
+dorado.MessageBox.confirm(&quot;您真的要保存吗?&quot;,function(){&#xD;
+action.execute(function(){&#xD;
+dialog.hide();&#xD;
+view.get(&quot;#dataSetDomainSchemaBdf3&quot;).flushAsync(); &#xD;
+view.get(&quot;#refreshCacheAction&quot;).execute(function(){ &#xD;
+});&#xD;
+});&#xD;
+})</ClientEvent>
+          <Property name="caption">确定</Property>
+          <Property name="iconClass">fa fa-check-circle</Property>
+        </Button>
+      </Buttons>
+      <Children>
+        <TabControl>
+          <ControlTab>
+            <Property name="caption">基本信息</Property>
+            <AutoForm>
+              <Property name="labelWidth">100</Property>
+              <Property name="dataSet">dataSetDomainSchemaBdf3</Property>
+              <Property name="cols">*</Property>
+              <AutoFormElement name="domainName">
+                <Property name="name">domainName</Property>
+                <Property name="property">domainName</Property>
+                <Property name="label">模型英文名称</Property>
+                <Editor/>
+              </AutoFormElement>
+              <AutoFormElement name="domainLabel">
+                <Property name="name">domainLabel</Property>
+                <Property name="property">domainLabel</Property>
+                <Property name="label">模型中文名称</Property>
+                <Editor/>
+              </AutoFormElement>
+              <AutoFormElement name="description">
+                <Property name="name">description</Property>
+                <Property name="property">description</Property>
+                <Property name="label">描述</Property>
+                <Property name="editorType">TextArea</Property>
+                <Editor/>
+              </AutoFormElement>
+            </AutoForm>
+          </ControlTab>
+          <ControlTab>
+            <Property name="caption">代码预览</Property>
+            <VerticalTabControl>
+              <ControlTab>
+                <Property name="caption">Table.sql</Property>
+                <AutoForm id="formCode">
+                  <Property name="labelWidth">100</Property>
+                  <Property name="dataSet">dataSetDomainSchemaBdf3</Property>
+                  <Property name="cols">*</Property>
+                  <Property name="showLabel">false</Property>
+                  <AutoFormElement>
+                    <ClientEvent name="onReady">self.get(&quot;editor&quot;).getCodeMirror().setValue(view.get(&quot;#formCode.entity.initSql&quot;));</ClientEvent>
+                    <Property name="name">initSql</Property>
+                    <Property name="property">initSql</Property>
+                    <Property name="label">初始化SQL</Property>
+                    <Editor>
+                      <SourceEditor>
+                        <Property name="gutter">true</Property>
+                        <Property name="lineNumbers">true</Property>
+                        <Property name="theme">cobalt</Property>
+                        <Property name="language">mysql</Property>
+                        <Property name="height">800</Property>
+                      </SourceEditor>
+                    </Editor>
+                  </AutoFormElement>
+                </AutoForm>
+              </ControlTab>
+              <ControlTab>
+                <Property name="caption">Menu.sql</Property>
+                <AutoForm>
+                  <Property name="labelWidth">100</Property>
+                  <Property name="dataSet">dataSetDomainSchemaBdf3</Property>
+                  <Property name="cols">*</Property>
+                  <Property name="showLabel">false</Property>
+                  <AutoFormElement name="menuSql">
+                    <ClientEvent name="onReady">self.get(&quot;editor&quot;).getCodeMirror().setValue(view.get(&quot;#formCode.entity.menuSql&quot;));</ClientEvent>
+                    <Property name="name">menuSql</Property>
+                    <Property name="property">menuSql</Property>
+                    <Property name="label">菜单SQL</Property>
+                    <Editor>
+                      <SourceEditor>
+                        <Property name="gutter">true</Property>
+                        <Property name="lineNumbers">true</Property>
+                        <Property name="language">mysql</Property>
+                        <Property name="theme">cobalt</Property>
+                        <Property name="height">800</Property>
+                      </SourceEditor>
+                    </Editor>
+                  </AutoFormElement>
+                </AutoForm>
+              </ControlTab>
+              <ControlTab>
+                <Property name="caption">Entity.java</Property>
+                <AutoForm>
+                  <Property name="labelWidth">100</Property>
+                  <Property name="dataSet">dataSetDomainSchemaBdf3</Property>
+                  <Property name="cols">*</Property>
+                  <Property name="showLabel">false</Property>
+                  <AutoFormElement name="genEntity">
+                    <ClientEvent name="onReady">self.get(&quot;editor&quot;).getCodeMirror().setValue(view.get(&quot;#formCode.entity.genEntity&quot;));</ClientEvent>
+                    <Property name="name">genEntity</Property>
+                    <Property name="property">genEntity</Property>
+                    <Property name="label">genEntity</Property>
+                    <Editor>
+                      <SourceEditor>
+                        <Property name="gutter">true</Property>
+                        <Property name="lineNumbers">true</Property>
+                        <Property name="theme">eclipse</Property>
+                        <Property name="language">java</Property>
+                        <Property name="height">800</Property>
+                      </SourceEditor>
+                    </Editor>
+                  </AutoFormElement>
+                </AutoForm>
+              </ControlTab>
+              <ControlTab>
+                <Property name="caption">Controller.java</Property>
+                <AutoForm>
+                  <Property name="labelWidth">100</Property>
+                  <Property name="dataSet">dataSetDomainSchemaBdf3</Property>
+                  <Property name="cols">*</Property>
+                  <Property name="showLabel">false</Property>
+                  <AutoFormElement name="genController">
+                    <ClientEvent name="onReady">self.get(&quot;editor&quot;).getCodeMirror().setValue(view.get(&quot;#formCode.entity.genController&quot;));</ClientEvent>
+                    <Property name="name">genController</Property>
+                    <Property name="property">genController</Property>
+                    <Property name="label">genController</Property>
+                    <Editor>
+                      <SourceEditor>
+                        <Property name="gutter">true</Property>
+                        <Property name="lineNumbers">true</Property>
+                        <Property name="theme">eclipse</Property>
+                        <Property name="language">java</Property>
+                        <Property name="height">800</Property>
+                      </SourceEditor>
+                    </Editor>
+                  </AutoFormElement>
+                </AutoForm>
+              </ControlTab>
+              <ControlTab>
+                <Property name="caption">Importer.java</Property>
+                <AutoForm>
+                  <Property name="labelWidth">100</Property>
+                  <Property name="dataSet">dataSetDomainSchemaBdf3</Property>
+                  <Property name="cols">*</Property>
+                  <Property name="showLabel">false</Property>
+                  <AutoFormElement>
+                    <ClientEvent name="onReady">self.get(&quot;editor&quot;).getCodeMirror().setValue(view.get(&quot;#formCode.entity.genImporter&quot;));</ClientEvent>
+                    <Property name="name">genImporter</Property>
+                    <Property name="property">genImporter</Property>
+                    <Property name="label">genImporter</Property>
+                    <Property name="name">genImport</Property>
+                    <Editor>
+                      <SourceEditor>
+                        <Property name="gutter">true</Property>
+                        <Property name="lineNumbers">true</Property>
+                        <Property name="theme">eclipse</Property>
+                        <Property name="language">java</Property>
+                        <Property name="height">800</Property>
+                      </SourceEditor>
+                    </Editor>
+                  </AutoFormElement>
+                </AutoForm>
+              </ControlTab>
+              <ControlTab>
+                <Property name="caption">ImporterVo.java</Property>
+                <AutoForm>
+                  <Property name="labelWidth">100</Property>
+                  <Property name="dataSet">dataSetDomainSchemaBdf3</Property>
+                  <Property name="cols">*</Property>
+                  <Property name="showLabel">false</Property>
+                  <AutoFormElement>
+                    <ClientEvent name="onReady">self.get(&quot;editor&quot;).getCodeMirror().setValue(view.get(&quot;#formCode.entity.genImporterVo&quot;));</ClientEvent>
+                    <Property name="name">genImporterVo</Property>
+                    <Property name="property">genImporterVo</Property>
+                    <Property name="label">genImporterVo</Property>
+                    <Property name="name">genImport</Property>
+                    <Editor>
+                      <SourceEditor>
+                        <Property name="gutter">true</Property>
+                        <Property name="lineNumbers">true</Property>
+                        <Property name="theme">eclipse</Property>
+                        <Property name="language">java</Property>
+                        <Property name="height">800</Property>
+                      </SourceEditor>
+                    </Editor>
+                  </AutoFormElement>
+                </AutoForm>
+              </ControlTab>
+              <ControlTab>
+                <Property name="caption">Service.java</Property>
+                <AutoForm>
+                  <Property name="labelWidth">100</Property>
+                  <Property name="dataSet">dataSetDomainSchemaBdf3</Property>
+                  <Property name="cols">*</Property>
+                  <Property name="showLabel">false</Property>
+                  <AutoFormElement name="genService">
+                    <ClientEvent name="onReady">self.get(&quot;editor&quot;).getCodeMirror().setValue(view.get(&quot;#formCode.entity.genService&quot;));</ClientEvent>
+                    <Property name="name">genService</Property>
+                    <Property name="property">genService</Property>
+                    <Property name="label">genService</Property>
+                    <Editor>
+                      <SourceEditor>
+                        <Property name="gutter">true</Property>
+                        <Property name="lineNumbers">true</Property>
+                        <Property name="theme">eclipse</Property>
+                        <Property name="language">java</Property>
+                        <Property name="height">800</Property>
+                      </SourceEditor>
+                    </Editor>
+                  </AutoFormElement>
+                </AutoForm>
+              </ControlTab>
+              <ControlTab>
+                <Property name="caption">Web.view.xml</Property>
+                <AutoForm>
+                  <Property name="labelWidth">100</Property>
+                  <Property name="dataSet">dataSetDomainSchemaBdf3</Property>
+                  <Property name="cols">*</Property>
+                  <Property name="showLabel">false</Property>
+                  <AutoFormElement name="genWeb">
+                    <ClientEvent name="onReady">self.get(&quot;editor&quot;).getCodeMirror().setValue(view.get(&quot;#formCode.entity.genWeb&quot;));</ClientEvent>
+                    <Property name="name">genWeb</Property>
+                    <Property name="property">genWeb</Property>
+                    <Property name="label">genWeb</Property>
+                    <Property name="editorType">TextArea</Property>
+                    <Editor>
+                      <SourceEditor>
+                        <Property name="gutter">true</Property>
+                        <Property name="lineNumbers">true</Property>
+                        <Property name="theme">erlang-dark</Property>
+                        <Property name="language">xml</Property>
+                        <Property name="height">800</Property>
+                      </SourceEditor>
+                    </Editor>
+                  </AutoFormElement>
+                </AutoForm>
+              </ControlTab>
+            </VerticalTabControl>
+          </ControlTab>
+        </TabControl>
+      </Children>
+      <Tools/>
+    </Dialog>
+    <Dialog id="dialogImportInit">
+      <Property name="caption">文件上传</Property>
+      <Property name="modal">true</Property>
+      <Property name="autoAdjustPosition">false</Property>
+      <Property name="border">curve</Property>
+      <Property name="center">true</Property>
+      <Property name="resizeable">false</Property>
+      <Property name="shadowMode">sides</Property>
+      <Buttons>
+        <Button layoutConstraint="bottom">
+          <Property name="action">autoUploadAction</Property>
+          <Property name="caption">上传</Property>
+        </Button>
+      </Buttons>
+      <Children>
+        <UploadAction id="autoUploadAction">
+          <ClientEvent name="onUploadProgress" signature="self,arg,autoUploadProgressBar">autoUploadProgressBar.set(&quot;value&quot;, arg.total.percent);&#xD;
+&#xD;
+var prettySize = function(value) {&#xD;
+var _format = function(value, unit) {&#xD;
+return (value.toFixed(1) + ' ' + unit).replace('.0', '');&#xD;
+};&#xD;
+var K = 1024;&#xD;
+var M = K * K;&#xD;
+var G = M * K;&#xD;
+var T = G * K;&#xD;
+var dividers = [ T, G, M, K, 1 ];&#xD;
+var units = [ 'TB', 'GB', 'MB', 'KB', 'B' ];&#xD;
+if (value == 0) {&#xD;
+return '0B';&#xD;
+} else if (value &lt; 0) {&#xD;
+return 'Mallalid size';&#xD;
+}&#xD;
+&#xD;
+var result = '';&#xD;
+var temp = 0;&#xD;
+for ( var i = 0; i &lt; dividers.length; i++) {&#xD;
+var divider = dividers[i];&#xD;
+if (value >= divider) {&#xD;
+temp = value / divider;&#xD;
+if (temp &lt; 1.05) {&#xD;
+result = _format(value,&#xD;
+units[((i + 1) &lt; units.length) ? (i + 1) : i]);&#xD;
+} else {&#xD;
+result = _format(temp, units[i]);&#xD;
+}&#xD;
+break;&#xD;
+}&#xD;
+}&#xD;
+return result;&#xD;
+};</ClientEvent>
+          <ClientEvent name="onFileUploaded" signature="self,arg,dialogImportInit,successDownload,failDownload">dialogImportInit.close();&#xD;
+var info = arg.returnValue;&#xD;
+dorado.widget.NotifyTipManager.notify(decodeURI(info.tip)); &#xD;
+view.get(&quot;#dataSetDomainSchemaBdf3&quot;).flushAsync();
+</ClientEvent>
+          <Property name="maxFileSize">100MB</Property>
+          <Property name="fileResolver">domainSchemaController#process</Property>
+          <Filters>
+            <Filter>
+              <Property name="title">Excel files</Property>
+              <Property name="extensions">xls,xlsx</Property>
+            </Filter>
+          </Filters>
+        </UploadAction>
+        <ProgressBar id="autoUploadProgressBar" layoutConstraint="type:top;top:50%;left:10;right:10">
+          <Property name="textPattern">{percent}%</Property>
+        </ProgressBar>
+      </Children>
+      <Tools/>
+    </Dialog>
+    <Export2ReportAction id="exportAction">
+      <Property name="template">domainSchemaBdf3DataGrid</Property>
+      <Property name="dataScope">serverAll</Property>
+      <Property name="executingMessage">正在导出……</Property>
+      <Property name="successMessage">数据导出成功。</Property>
+      <Property name="extension">xlsx</Property>
+      <Property name="maxSize">10000</Property>
+      <Property name="fileName">领域模型定义</Property>
+    </Export2ReportAction>
+    <Dialog id="dialogDomain">
+      <Property name="center">true</Property>
+      <Property name="maximizeable">true</Property>
+      <Property name="maximized">true</Property>
+      <Property name="modal">true</Property>
+      <Property name="closeable">true</Property>
+      <Property name="caption">领域模型</Property>
+      <Buttons>
+        <Button>
+          <ClientEvent name="onClick">var data=view.id(&quot;dataSetDomain&quot;).getData();&#xD;
+var dialog=view.id(&quot;dialogDomain&quot;);&#xD;
+dorado.MessageBox.confirm(&quot;您真的要取消当前操作吗？&quot;,function(){&#xD;
+data.cancel();&#xD;
+dialog.hide();&#xD;
+});</ClientEvent>
+          <Property name="caption">取消</Property>
+          <Property name="iconClass">fa fa-share</Property>
+        </Button>
+        <Button>
+          <ClientEvent name="onClick">var dialog=view.id(&quot;dialogDomain&quot;);&#xD;
+var action=view.id(&quot;updateAction&quot;);&#xD;
+dorado.MessageBox.confirm(&quot;您真的要保存吗?&quot;,function(){&#xD;
+action.execute(function(){&#xD;
+dialog.hide();&#xD;
+view.get(&quot;#dataSetDomain&quot;).flushAsync(); &#xD;
+view.get(&quot;#refreshCacheAction&quot;).execute(function(){ &#xD;
+});&#xD;
+});&#xD;
+})</ClientEvent>
+          <Property name="caption">确定</Property>
+          <Property name="iconClass">fa fa-check-circle</Property>
+        </Button>
+      </Buttons>
+      <Children>
+        <SubViewHolder id="subViewDomain">
+          <Property name="subView">com.mr.qdp.view.Domain</Property>
+        </SubViewHolder>
+      </Children>
+      <Tools/>
+    </Dialog>
+    <AjaxAction id="genCodeCloudAjaxAction">
+      <Property name="service">domainSchemaBdf3Service#genCodeCloud</Property>
+    </AjaxAction>
+    <AjaxAction id="getSqlAjaxAction">
+      <Property name="service">domainSchemaBdf3Service#getInitSql</Property>
+    </AjaxAction>
+    <AjaxAction id="getMenuSqlAjaxAction">
+      <Property name="service">domainSchemaBdf3Service#getMenuSql</Property>
+    </AjaxAction>
+    <AjaxAction id="getEnumSqlAjaxAction">
+      <Property name="service">domainSchemaBdf3Service#getEnumSql</Property>
+    </AjaxAction>
+    <Dialog id="dialogSql">
+      <Property name="center">true</Property>
+      <Property name="width">600</Property>
+      <Property name="height">400</Property>
+      <Property name="modal">true</Property>
+      <Property name="closeable">true</Property>
+      <Property name="caption">数据编辑</Property>
+      <Property name="maximizeable">true</Property>
+      <Property name="maximized">true</Property>
+      <Buttons/>
+      <Children>
+        <TextArea id="sql" layoutConstraint="padding:10"/>
+      </Children>
+      <Tools/>
+    </Dialog>
+    <Dialog id="dialogMenuSql">
+      <Property name="center">true</Property>
+      <Property name="width">600</Property>
+      <Property name="height">400</Property>
+      <Property name="modal">true</Property>
+      <Property name="closeable">true</Property>
+      <Property name="caption">数据编辑</Property>
+      <Property name="maximizeable">true</Property>
+      <Property name="maximized">true</Property>
+      <Buttons/>
+      <Children>
+        <TextArea id="menuSql" layoutConstraint="padding:10"/>
+      </Children>
+      <Tools/>
+    </Dialog>
+    <Dialog id="dialogEnumSql">
+      <Property name="center">true</Property>
+      <Property name="width">600</Property>
+      <Property name="height">400</Property>
+      <Property name="modal">true</Property>
+      <Property name="closeable">true</Property>
+      <Property name="caption">数据编辑</Property>
+      <Property name="maximizeable">true</Property>
+      <Property name="maximized">true</Property>
+      <Buttons/>
+      <Children>
+        <Panel layout="hbox padding:30;regionPadding:30;stretch:true;align:center;pack:center" layoutConstraint="padding:10">
+          <Buttons/>
+          <Children>
+            <TextArea id="enumSql1" layoutConstraint="padding:10"/>
+            <TextArea id="enumSql2" layoutConstraint="padding:10"/>
+            <TextArea id="enumSql3" layoutConstraint="padding:10"/>
+            <TextArea id="enumSql4" layoutConstraint="padding:10"/>
+          </Children>
+          <Tools/>
+        </Panel>
+      </Children>
+      <Tools/>
+    </Dialog>
+  </View>
+</ViewConfig>

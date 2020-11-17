@@ -1,0 +1,863 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ViewConfig>
+  <Arguments/>
+  <Context>
+    <Attribute name="domainSchemaId"/>
+  </Context>
+  <Model>
+    <DataType name="Domain">
+      <Property name="creationType">com.mr.qdp.entity.Domain</Property>
+      <PropertyDef name="id">
+        <Property name="dataType">String</Property>
+      </PropertyDef>
+      <PropertyDef name="domainSchemaId">
+        <Property name="dataType">String</Property>
+        <Property name="label">领域模型定义ID</Property>
+        <Property name="mapping">
+          <Property name="mapValues">${dorado.getDataProvider(&quot;domain#getDomainSchemaKvMap&quot;).getResult()}</Property>
+        </Property>
+      </PropertyDef>
+      <PropertyDef name="name">
+        <Property name="dataType">String</Property>
+        <Property name="label">C属性名称</Property>
+        <Property name="required">true</Property>
+      </PropertyDef>
+      <PropertyDef name="dataType">
+        <Property name="dataType">String</Property>
+        <Property name="label">C类型</Property>
+        <Property name="required">true</Property>
+      </PropertyDef>
+      <PropertyDef name="label">
+        <Property name="dataType">String</Property>
+        <Property name="label">R标题/注释</Property>
+        <Property name="required">true</Property>
+      </PropertyDef>
+      <PropertyDef name="example">
+        <Property name="dataType">String</Property>
+        <Property name="label">R举例数据</Property>
+      </PropertyDef>
+      <PropertyDef name="description">
+        <Property name="dataType">String</Property>
+        <Property name="label">R数据说明</Property>
+      </PropertyDef>
+      <PropertyDef name="searchCondition">
+        <Property name="dataType">String</Property>
+        <Property name="label">R查询条件?</Property>
+      </PropertyDef>
+      <PropertyDef name="searchResult">
+        <Property name="dataType">String</Property>
+        <Property name="label">R查询结果?</Property>
+      </PropertyDef>
+      <PropertyDef name="editable">
+        <Property name="dataType">String</Property>
+        <Property name="label">R编辑展现?</Property>
+      </PropertyDef>
+      <PropertyDef name="required">
+        <Property name="dataType">String</Property>
+        <Property name="label">R必填字段?</Property>
+      </PropertyDef>
+      <PropertyDef name="imported">
+        <Property name="dataType">String</Property>
+        <Property name="label">R是否导入?</Property>
+      </PropertyDef>
+      <PropertyDef name="fromEnum">
+        <Property name="dataType">String</Property>
+        <Property name="label">C枚举值</Property>
+      </PropertyDef>
+      <PropertyDef name="fromTable">
+        <Property name="dataType">String</Property>
+        <Property name="label">C关联表</Property>
+      </PropertyDef>
+      <PropertyDef name="format">
+        <Property name="dataType">String</Property>
+        <Property name="label">特殊格式</Property>
+      </PropertyDef>
+      <PropertyDef name="columnName">
+        <Property name="dataType">String</Property>
+        <Property name="label">表中列名</Property>
+      </PropertyDef>
+      <PropertyDef name="lookupName">
+        <Property name="dataType">String</Property>
+        <Property name="label">枚举名称</Property>
+      </PropertyDef>
+      <PropertyDef name="staticLookupXml">
+        <Property name="dataType">String</Property>
+        <Property name="label">静态LOOKUP_XML</Property>
+      </PropertyDef>
+      <PropertyDef name="dbLookupXml">
+        <Property name="dataType">String</Property>
+        <Property name="label">表LOOKUP_XML</Property>
+      </PropertyDef>
+      <PropertyDef name="dbEntityName">
+        <Property name="dataType">String</Property>
+        <Property name="label">关联表相关实体</Property>
+      </PropertyDef>
+      <PropertyDef name="dbEntityKey">
+        <Property name="dataType">String</Property>
+        <Property name="label">关联表相关实体KEY</Property>
+      </PropertyDef>
+      <PropertyDef name="dbEntityDisplayValue">
+        <Property name="dataType">String</Property>
+        <Property name="label">关联表相关实体显示属性</Property>
+      </PropertyDef>
+      <PropertyDef name="columnLength">
+        <Property name="dataType">String</Property>
+        <Property name="label">R表字段长度</Property>
+      </PropertyDef>
+      <PropertyDef name="uniqueValue">
+        <Property name="dataType">String</Property>
+        <Property name="label">R联合唯一?</Property>
+      </PropertyDef>
+      <PropertyDef name="extTableSaveId">
+        <Property name="dataType">String</Property>
+        <Property name="label">C关联表保存ID</Property>
+      </PropertyDef>
+      <PropertyDef name="fieldOrder">
+        <Property name="dataType">Integer</Property>
+        <Property name="label">排序</Property>
+        <Property name="required">true</Property>
+      </PropertyDef>
+      <PropertyDef name="comment">
+        <Property name="dataType">String</Property>
+        <Property name="label">表注释</Property>
+      </PropertyDef>
+      <PropertyDef name="refTableDomainSchemaId">
+        <Property name="dataType">String</Property>
+        <Property name="label">领域模型定义ID</Property>
+      </PropertyDef>
+    </DataType>
+    <DataType name="Condition">
+      <PropertyDef name="id">
+        <Property name="dataType">String</Property>
+      </PropertyDef>
+      <PropertyDef name="domainSchemaId">
+        <Property name="dataType">String</Property>
+        <Property name="label">领域模型定义ID</Property>
+      </PropertyDef>
+      <PropertyDef name="name">
+        <Property name="dataType">String</Property>
+        <Property name="label">C属性名称</Property>
+      </PropertyDef>
+      <PropertyDef name="dataType">
+        <Property name="dataType">String</Property>
+        <Property name="label">C类型</Property>
+      </PropertyDef>
+      <PropertyDef name="label">
+        <Property name="dataType">String</Property>
+        <Property name="label">R标题/注释</Property>
+      </PropertyDef>
+      <PropertyDef name="example">
+        <Property name="dataType">String</Property>
+        <Property name="label">R举例数据</Property>
+      </PropertyDef>
+      <PropertyDef name="description">
+        <Property name="dataType">String</Property>
+        <Property name="label">R数据说明</Property>
+      </PropertyDef>
+      <PropertyDef name="searchCondition">
+        <Property name="dataType">String</Property>
+        <Property name="label">R查询条件?</Property>
+      </PropertyDef>
+      <PropertyDef name="searchResult">
+        <Property name="dataType">String</Property>
+        <Property name="label">R查询结果?</Property>
+      </PropertyDef>
+      <PropertyDef name="editable">
+        <Property name="dataType">String</Property>
+        <Property name="label">R编辑展现?</Property>
+      </PropertyDef>
+      <PropertyDef name="required">
+        <Property name="dataType">String</Property>
+        <Property name="label">R必填字段?</Property>
+      </PropertyDef>
+      <PropertyDef name="fromEnum">
+        <Property name="dataType">String</Property>
+        <Property name="label">C枚举值</Property>
+      </PropertyDef>
+      <PropertyDef name="fromTable">
+        <Property name="dataType">String</Property>
+        <Property name="label">C关联表</Property>
+      </PropertyDef>
+      <PropertyDef name="format">
+        <Property name="dataType">String</Property>
+        <Property name="label">特殊格式</Property>
+      </PropertyDef>
+      <PropertyDef name="staticLookupXml">
+        <Property name="dataType">String</Property>
+        <Property name="label">静态XML</Property>
+      </PropertyDef>
+      <PropertyDef name="dbLookupXml">
+        <Property name="dataType">String</Property>
+        <Property name="label">表XML</Property>
+      </PropertyDef>
+      <PropertyDef name="columnLength">
+        <Property name="dataType">String</Property>
+        <Property name="label">R表字段长度</Property>
+      </PropertyDef>
+      <PropertyDef name="uniqueValue">
+        <Property name="dataType">String</Property>
+        <Property name="label">R联合唯一?</Property>
+      </PropertyDef>
+      <PropertyDef name="domainSchemaIdDisplay">
+        <Property name="dataType">String</Property>
+      </PropertyDef>
+      <PropertyDef name="domainSchemaId">
+        <Property name="dataType">String</Property>
+        <Property name="label">领域模型定义ID</Property>
+      </PropertyDef>
+      <PropertyDef name="projectId">
+        <Property name="dataType">String</Property>
+        <Property name="mapping">
+          <Property name="mapValues">${dorado.getDataProvider(&quot;domain#getProjectKvMap&quot;).getResult()}</Property>
+        </Property>
+      </PropertyDef>
+    </DataType>
+  </Model>
+  <View>
+    <Property name="packages">font-awesome</Property>
+    <Property name="title">领域模型信息维护</Property>
+    <DataSet id="dataSetDomain">
+      <Property name="dataProvider">domainController#query</Property>
+      <Property name="pageSize">10000</Property>
+      <Property name="dataType">[Domain]</Property>
+      <Property name="loadMode">lazy</Property>
+    </DataSet>
+    <UpdateAction id="updateAction">
+      <Property name="successMessage">保存成功!</Property>
+      <Property name="executingMessage">正在保存...</Property>
+      <Property name="dataResolver">domainController#save</Property>
+      <UpdateItem>
+        <Property name="dataSet">dataSetDomain</Property>
+      </UpdateItem>
+    </UpdateAction>
+    <ToolBar>
+      <ToolBarButton>
+        <ClientEvent name="onClick">var datas = view.get(&quot;#dataSetDomain.data&quot;);&#xD;
+datas.insert();  </ClientEvent>
+        <Property name="caption">插入</Property>
+        <Property name="iconClass">fa fa-plus</Property>
+      </ToolBarButton>
+      <ToolBarButton>
+        <ClientEvent name="onClick">var selection = view.get(&quot;#domainDataGrid&quot;).get(&quot;selection&quot;);&#xD;
+if(0 == selection.length) {&#xD;
+	dorado.widget.NotifyTipManager.notify(&quot;请勾选至少一条记录&quot;); &#xD;
+	return;&#xD;
+}&#xD;
+&#xD;
+&#xD;
+var parameter = {&#xD;
+'domainDataGrid': selection&#xD;
+ };&#xD;
+&#xD;
+var getEnglishNameByLabelAjaxAction = view.get(&quot;#getEnglishNameByLabelAjaxAction&quot;); &#xD;
+&#xD;
+getEnglishNameByLabelAjaxAction.set(&quot;parameter&quot;, parameter).execute(function(result) {&#xD;
+	dorado.widget.NotifyTipManager.notify(result); &#xD;
+view.get(&quot;#dataSetDomain&quot;).flushAsync();&#xD;
+			});</ClientEvent>
+        <Property name="caption">起名</Property>
+        <Property name="iconClass">fa fa-magic</Property>
+      </ToolBarButton>
+      <ToolBarButton>
+        <ClientEvent name="onClick">var selection = view.get(&quot;#domainDataGrid&quot;).get(&quot;selection&quot;);&#xD;
+if(0 == selection.length) {&#xD;
+	dorado.widget.NotifyTipManager.notify(&quot;请勾选至少一条记录&quot;); &#xD;
+	return;&#xD;
+}&#xD;
+var domainSchemaId=view.get(&quot;context&quot;).get(&quot;domainSchemaId&quot;);&#xD;
+var parameter = {&#xD;
+'domainSchemaId' : domainSchemaId,&#xD;
+'domainDataGrid': selection&#xD;
+ };&#xD;
+&#xD;
+var saveAjaxAction = view.get(&quot;#saveAjaxAction&quot;); &#xD;
+&#xD;
+saveAjaxAction.set(&quot;parameter&quot;, parameter).execute(function(result) {&#xD;
+dorado.widget.NotifyTipManager.notify(result);&#xD;
+			});</ClientEvent>
+        <Property name="caption">保存</Property>
+        <Property name="iconClass">fa fa-check</Property>
+      </ToolBarButton>
+      <Separator>
+        <Property name="tip">EXCEL导入</Property>
+      </Separator>
+      <ToolBarButton>
+        <ClientEvent name="onClick" signature="self,arg,autoUploadProgressBar,dialogImportInit">autoUploadProgressBar.set(&quot;value&quot;, '0');&#xD;
+dialogImportInit.show();</ClientEvent>
+        <Property name="caption">导入</Property>
+        <Property name="iconClass">fa fa-cloud-upload</Property>
+      </ToolBarButton>
+      <ToolBarButton>
+        <ClientEvent name="onClick">view.get(&quot;#dialogTrans&quot;).show();</ClientEvent>
+        <Property name="caption">Java->Excel</Property>
+        <Property name="iconClass">fa fa-coffee</Property>
+      </ToolBarButton>
+      <ToolBarButton>
+        <ClientEvent name="onClick">view.get(&quot;#dialogSqlDomain&quot;).show();</ClientEvent>
+        <Property name="caption">Sql->Domain</Property>
+        <Property name="iconClass">fa fa-database</Property>
+      </ToolBarButton>
+      <Fill/>
+      <ToolBarButton>
+        <ClientEvent name="onClick">var domainSchemaId=view.get(&quot;context&quot;).get(&quot;domainSchemaId&quot;);&#xD;
+var parameter={&#xD;
+	&quot;domainSchemaId&quot;:domainSchemaId&#xD;
+}&#xD;
+var dsDomain=view.get(&quot;#dataSetDomain&quot;);&#xD;
+//dsDomain.set('parameter',parameter);&#xD;
+dsDomain.flushAsync();</ClientEvent>
+        <Property name="caption">刷新</Property>
+        <Property name="iconClass">fa fa-refresh</Property>
+      </ToolBarButton>
+      <ToolBarButton>
+        <Property name="caption">导出</Property>
+        <Property name="action">exportAction</Property>
+        <Property name="iconClass">fa fa-cloud-download</Property>
+      </ToolBarButton>
+      <ToolBarButton>
+        <ClientEvent name="onClick">var updateAction=view.get(&quot;#updateAction&quot;);&#xD;
+var selection = view.get(&quot;#domainDataGrid&quot;).get(&quot;selection&quot;);&#xD;
+&#xD;
+if(0 != selection.length) {&#xD;
+dorado.MessageBox.confirm(&quot;您真的要保存吗?&quot;,function(){&#xD;
+&#xD;
+for (var i = 0; i &lt; selection.length; i++) {&#xD;
+var select = selection[i];&#xD;
+select.remove();&#xD;
+}&#xD;
+&#xD;
+updateAction.execute();&#xD;
+view.get(&quot;#dataSetDomain&quot;).flushAsync(); &#xD;
+})&#xD;
+&#xD;
+} else {&#xD;
+dorado.MessageBox.alert(&quot;请选择需要删除的记录！&quot;);&#xD;
+}&#xD;
+&#xD;
+&#xD;
+</ClientEvent>
+        <Property name="caption">删除</Property>
+        <Property name="iconClass">fa fa-trash-o</Property>
+      </ToolBarButton>
+    </ToolBar>
+    <DataGrid id="domainDataGrid">
+      <Property name="dataSet">dataSetDomain</Property>
+      <Property name="dataType">Domain</Property>
+      <Property name="selectionMode">multiRows</Property>
+      <RowSelectorColumn/>
+      <RowNumColumn/>
+      <DataColumn>
+        <Property name="property">name</Property>
+        <Property name="align">center</Property>
+        <Property name="name">(产品)属性名称</Property>
+      </DataColumn>
+      <DataColumn>
+        <Property name="property">dataType</Property>
+        <Property name="align">center</Property>
+        <Property name="trigger">dataTypeListDropDown</Property>
+        <Property name="name">(开发)类型</Property>
+      </DataColumn>
+      <DataColumn>
+        <Property name="property">label</Property>
+        <Property name="align">center</Property>
+        <Property name="name">(产品)标题/注释</Property>
+      </DataColumn>
+      <DataColumn name="R查询条件?">
+        <Property name="property">searchCondition</Property>
+        <Property name="align">center</Property>
+      </DataColumn>
+      <DataColumn name="R查询结果?">
+        <Property name="property">searchResult</Property>
+        <Property name="align">center</Property>
+      </DataColumn>
+      <DataColumn name="R编辑展现?">
+        <Property name="property">editable</Property>
+        <Property name="align">center</Property>
+      </DataColumn>
+      <DataColumn name="R必填字段?">
+        <Property name="property">required</Property>
+        <Property name="align">center</Property>
+      </DataColumn>
+      <DataColumn>
+        <Property name="property">imported</Property>
+        <Property name="align">center</Property>
+        <Property name="name">R是否导入?</Property>
+      </DataColumn>
+      <DataColumn>
+        <Property name="property">fromEnum</Property>
+        <Property name="align">center</Property>
+        <Property name="trigger">refEnumListDropDown</Property>
+        <Property name="name">(开发)枚举值</Property>
+      </DataColumn>
+      <DataColumn name="C关联表">
+        <Property name="property">fromTable</Property>
+        <Property name="align">center</Property>
+        <Property name="trigger">refTableListDropDown</Property>
+      </DataColumn>
+      <DataColumn name="R表字段长度">
+        <Property name="property">columnLength</Property>
+        <Property name="align">center</Property>
+      </DataColumn>
+      <DataColumn name="排序">
+        <Property name="property">fieldOrder</Property>
+        <Property name="align">center</Property>
+      </DataColumn>
+      <DataColumn name="id">
+        <Property name="property">id</Property>
+        <Property name="visible">false</Property>
+      </DataColumn>
+    </DataGrid>
+    <Dialog id="dialogDomain">
+      <ClientEvent name="onClose">var data=view.id(&quot;dataSetDomain&quot;).getData();&#xD;
+data.cancel();&#xD;
+</ClientEvent>
+      <Property name="center">true</Property>
+      <Property name="maximizeable">true</Property>
+      <Property name="maximized">true</Property>
+      <Property name="modal">true</Property>
+      <Property name="closeable">true</Property>
+      <Property name="caption">数据编辑</Property>
+      <Buttons>
+        <Button>
+          <ClientEvent name="onClick">var data=view.id(&quot;dataSetDomain&quot;).getData();&#xD;
+var dialog=view.id(&quot;dialogDomain&quot;);&#xD;
+dorado.MessageBox.confirm(&quot;您真的要取消当前操作吗？&quot;,function(){&#xD;
+data.cancel();&#xD;
+dialog.hide();&#xD;
+});</ClientEvent>
+          <Property name="caption">取消</Property>
+          <Property name="iconClass">fa fa-share</Property>
+        </Button>
+        <Button>
+          <ClientEvent name="onClick">var dialog=view.id(&quot;dialogDomain&quot;);&#xD;
+var action=view.id(&quot;updateAction&quot;);&#xD;
+dorado.MessageBox.confirm(&quot;您真的要保存吗?&quot;,function(){&#xD;
+action.execute(function(){&#xD;
+dialog.hide();&#xD;
+view.get(&quot;#dataSetDomain&quot;).flushAsync(); &#xD;
+view.get(&quot;#refreshCacheAction&quot;).execute(function(){ &#xD;
+});&#xD;
+});&#xD;
+})</ClientEvent>
+          <Property name="caption">确定</Property>
+          <Property name="iconClass">fa fa-check-circle</Property>
+        </Button>
+      </Buttons>
+      <Children>
+        <AutoForm>
+          <Property name="labelWidth">100</Property>
+          <Property name="dataSet">dataSetDomain</Property>
+          <Property name="cols">*,*</Property>
+          <AutoFormElement name="domainSchemaId">
+            <Property name="name">domainSchemaId</Property>
+            <Property name="property">domainSchemaId</Property>
+            <Property name="label">领域模型定义ID</Property>
+            <Editor/>
+          </AutoFormElement>
+          <AutoFormElement name="name">
+            <Property name="name">name</Property>
+            <Property name="property">name</Property>
+            <Property name="label">C属性名称</Property>
+            <Editor/>
+          </AutoFormElement>
+          <AutoFormElement name="dataType">
+            <Property name="name">dataType</Property>
+            <Property name="property">dataType</Property>
+            <Property name="label">C类型</Property>
+            <Editor/>
+          </AutoFormElement>
+          <AutoFormElement name="label">
+            <Property name="name">label</Property>
+            <Property name="property">label</Property>
+            <Property name="label">R标题/注释</Property>
+            <Editor/>
+          </AutoFormElement>
+          <AutoFormElement name="example">
+            <Property name="name">example</Property>
+            <Property name="property">example</Property>
+            <Property name="label">R举例数据</Property>
+            <Editor/>
+          </AutoFormElement>
+          <AutoFormElement name="description">
+            <Property name="name">description</Property>
+            <Property name="property">description</Property>
+            <Property name="label">R数据说明</Property>
+            <Editor/>
+          </AutoFormElement>
+          <AutoFormElement name="searchCondition">
+            <Property name="name">searchCondition</Property>
+            <Property name="property">searchCondition</Property>
+            <Property name="label">R查询条件?</Property>
+            <Editor/>
+          </AutoFormElement>
+          <AutoFormElement name="searchResult">
+            <Property name="name">searchResult</Property>
+            <Property name="property">searchResult</Property>
+            <Property name="label">R查询结果?</Property>
+            <Editor/>
+          </AutoFormElement>
+          <AutoFormElement name="editable">
+            <Property name="name">editable</Property>
+            <Property name="property">editable</Property>
+            <Property name="label">R编辑展现?</Property>
+            <Editor/>
+          </AutoFormElement>
+          <AutoFormElement name="required">
+            <Property name="name">required</Property>
+            <Property name="property">required</Property>
+            <Property name="label">R必填字段?</Property>
+            <Editor/>
+          </AutoFormElement>
+          <AutoFormElement name="imported">
+            <Property name="name">imported</Property>
+            <Property name="property">imported</Property>
+            <Property name="label">R是否导入?</Property>
+            <Editor/>
+          </AutoFormElement>
+          <AutoFormElement name="fromEnum">
+            <Property name="name">fromEnum</Property>
+            <Property name="property">fromEnum</Property>
+            <Property name="label">C枚举值</Property>
+            <Editor/>
+          </AutoFormElement>
+          <AutoFormElement name="fromTable">
+            <Property name="name">fromTable</Property>
+            <Property name="property">fromTable</Property>
+            <Property name="label">C关联表</Property>
+            <Editor/>
+          </AutoFormElement>
+          <AutoFormElement name="format">
+            <Property name="name">format</Property>
+            <Property name="property">format</Property>
+            <Property name="label">特殊格式</Property>
+            <Editor/>
+          </AutoFormElement>
+          <AutoFormElement name="columnName">
+            <Property name="name">columnName</Property>
+            <Property name="property">columnName</Property>
+            <Property name="label">表中列名</Property>
+            <Editor/>
+          </AutoFormElement>
+          <AutoFormElement name="lookupName">
+            <Property name="name">lookupName</Property>
+            <Property name="property">lookupName</Property>
+            <Property name="label">枚举名称</Property>
+            <Editor/>
+          </AutoFormElement>
+          <AutoFormElement name="staticLookupXml">
+            <Property name="name">staticLookupXml</Property>
+            <Property name="property">staticLookupXml</Property>
+            <Property name="label">静态LOOKUP_XML</Property>
+            <Editor/>
+          </AutoFormElement>
+          <AutoFormElement name="dbLookupXml">
+            <Property name="name">dbLookupXml</Property>
+            <Property name="property">dbLookupXml</Property>
+            <Property name="label">表LOOKUP_XML</Property>
+            <Editor/>
+          </AutoFormElement>
+          <AutoFormElement name="dbEntityName">
+            <Property name="name">dbEntityName</Property>
+            <Property name="property">dbEntityName</Property>
+            <Property name="label">关联表相关实体</Property>
+            <Editor/>
+          </AutoFormElement>
+          <AutoFormElement name="dbEntityKey">
+            <Property name="name">dbEntityKey</Property>
+            <Property name="property">dbEntityKey</Property>
+            <Property name="label">关联表相关实体KEY</Property>
+            <Editor/>
+          </AutoFormElement>
+          <AutoFormElement name="dbEntityDisplayValue">
+            <Property name="name">dbEntityDisplayValue</Property>
+            <Property name="property">dbEntityDisplayValue</Property>
+            <Property name="label">关联表相关实体显示属性</Property>
+            <Editor/>
+          </AutoFormElement>
+          <AutoFormElement name="columnLength">
+            <Property name="name">columnLength</Property>
+            <Property name="property">columnLength</Property>
+            <Property name="label">R表字段长度</Property>
+            <Editor/>
+          </AutoFormElement>
+          <AutoFormElement name="uniqueValue">
+            <Property name="name">uniqueValue</Property>
+            <Property name="property">uniqueValue</Property>
+            <Property name="label">R联合唯一?</Property>
+            <Editor/>
+          </AutoFormElement>
+          <AutoFormElement name="extTableSaveId">
+            <Property name="name">extTableSaveId</Property>
+            <Property name="property">extTableSaveId</Property>
+            <Property name="label">C关联表保存ID</Property>
+            <Editor/>
+          </AutoFormElement>
+          <AutoFormElement name="fieldOrder">
+            <Property name="name">fieldOrder</Property>
+            <Property name="property">fieldOrder</Property>
+            <Property name="label">排序</Property>
+            <Editor/>
+          </AutoFormElement>
+        </AutoForm>
+      </Children>
+      <Tools/>
+    </Dialog>
+    <Dialog id="dialogImportInit">
+      <Property name="caption">文件上传</Property>
+      <Property name="modal">true</Property>
+      <Property name="autoAdjustPosition">false</Property>
+      <Property name="border">curve</Property>
+      <Property name="center">true</Property>
+      <Property name="resizeable">false</Property>
+      <Property name="shadowMode">sides</Property>
+      <Buttons>
+        <Button layoutConstraint="bottom">
+          <Property name="action">autoUploadAction</Property>
+          <Property name="caption">上传</Property>
+        </Button>
+      </Buttons>
+      <Children>
+        <UploadAction id="autoUploadAction">
+          <ClientEvent name="onUploadProgress" signature="self,arg,autoUploadProgressBar">autoUploadProgressBar.set(&quot;value&quot;, arg.total.percent);&#xD;
+&#xD;
+var prettySize = function(value) {&#xD;
+var _format = function(value, unit) {&#xD;
+return (value.toFixed(1) + ' ' + unit).replace('.0', '');&#xD;
+};&#xD;
+var K = 1024;&#xD;
+var M = K * K;&#xD;
+var G = M * K;&#xD;
+var T = G * K;&#xD;
+var dividers = [ T, G, M, K, 1 ];&#xD;
+var units = [ 'TB', 'GB', 'MB', 'KB', 'B' ];&#xD;
+if (value == 0) {&#xD;
+return '0B';&#xD;
+} else if (value &lt; 0) {&#xD;
+return 'Mallalid size';&#xD;
+}&#xD;
+&#xD;
+var result = '';&#xD;
+var temp = 0;&#xD;
+for ( var i = 0; i &lt; dividers.length; i++) {&#xD;
+var divider = dividers[i];&#xD;
+if (value >= divider) {&#xD;
+temp = value / divider;&#xD;
+if (temp &lt; 1.05) {&#xD;
+result = _format(value,&#xD;
+units[((i + 1) &lt; units.length) ? (i + 1) : i]);&#xD;
+} else {&#xD;
+result = _format(temp, units[i]);&#xD;
+}&#xD;
+break;&#xD;
+}&#xD;
+}&#xD;
+return result;&#xD;
+};</ClientEvent>
+          <ClientEvent name="onFileUploaded" signature="self,arg,dialogImportInit">dialogImportInit.close();&#xD;
+var info = arg.returnValue;&#xD;
+dorado.widget.NotifyTipManager.notify(decodeURI(info.tip)); &#xD;
+view.get(&quot;#dataSetDomain&quot;).flushAsync();
+</ClientEvent>
+          <ClientEvent name="beforeFileUpload">var domainSchemaId=view.get(&quot;context&quot;).get(&quot;domainSchemaId&quot;);&#xD;
+var parameter = {&#xD;
+	&quot;domainSchemaId&quot; : domainSchemaId&#xD;
+}&#xD;
+self.set(&quot;parameter&quot;,parameter);&#xD;
+</ClientEvent>
+          <Property name="maxFileSize">100MB</Property>
+          <Property name="fileResolver">domainController#process</Property>
+          <Filters>
+            <Filter>
+              <Property name="title">Excel files</Property>
+              <Property name="extensions">xls,xlsx</Property>
+            </Filter>
+          </Filters>
+        </UploadAction>
+        <ProgressBar id="autoUploadProgressBar" layoutConstraint="type:top;top:50%;left:10;right:10">
+          <Property name="textPattern">{percent}%</Property>
+        </ProgressBar>
+      </Children>
+      <Tools/>
+    </Dialog>
+    <Export2ReportAction id="exportAction">
+      <Property name="template">domainDataGrid</Property>
+      <Property name="dataScope">serverAll</Property>
+      <Property name="executingMessage">正在导出……</Property>
+      <Property name="successMessage">数据导出成功。</Property>
+      <Property name="extension">xlsx</Property>
+      <Property name="maxSize">10000</Property>
+      <Property name="fileName">领域模型</Property>
+    </Export2ReportAction>
+    <AjaxAction id="saveAjaxAction">
+      <Property name="service">domainService#saveDomainDataGrid</Property>
+      <Property name="async">false</Property>
+    </AjaxAction>
+    <AjaxAction id="getEnglishNameByLabelAjaxAction">
+      <Property name="service">domainService#getEnglishNameByLabel</Property>
+    </AjaxAction>
+    <AjaxAction id="classToDomainAjaxAction">
+      <Property name="service">domainService#doClassToDomain</Property>
+      <Property name="async">false</Property>
+    </AjaxAction>
+    <AjaxAction id="getProjectNameByIdAjaxAction">
+      <Property name="service">projectCR#getNameById</Property>
+    </AjaxAction>
+    <AjaxAction id="sqlToDomainAjaxAction">
+      <Property name="service">domainService#doSqlToDomain</Property>
+      <Property name="async">false</Property>
+    </AjaxAction>
+    <ListDropDown id="refEnumListDropDown">
+      <Property name="items">
+        <Collection>
+          <Value>YES_NO(1:是|0:否)</Value>
+          <Value>SEND_STATUS(1:待发送|2:已发送)</Value>
+        </Collection>
+      </Property>
+    </ListDropDown>
+    <ListDropDown id="refTableListDropDown">
+      <Property name="items">
+        <Collection>
+          <Value>(BIZ_SERVICE_API,CODE{not_save_id}:NAME)</Value>
+          <Value>(BIZ_INNER_SYS,ID{not_save_id}:NAME)</Value>
+          <Value>(BIZ_MAPPING_PROV_CODE,CPS_PROV_CODE{not_save_id}:NAME)</Value>
+        </Collection>
+      </Property>
+    </ListDropDown>
+    <ListDropDown id="dataTypeListDropDown">
+      <Property name="items">String,Integer,Long,Date,Text,boolean,BigDecimal</Property>
+    </ListDropDown>
+    <Dialog id="dialogTrans" layout="vbox padding:15" layoutConstraint="padding:15">
+      <Property name="center">true</Property>
+      <Property name="width">800</Property>
+      <Property name="height">600</Property>
+      <Property name="modal">true</Property>
+      <Property name="closeable">true</Property>
+      <Property name="caption">数据编辑</Property>
+      <Property name="maximizeable">true</Property>
+      <Buttons>
+        <Button>
+          <ClientEvent name="onClick">var classText = view.get(&quot;#classText.text&quot;);&#xD;
+&#xD;
+var parameter = {&#xD;
+'classText' : classText&#xD;
+&#xD;
+ };&#xD;
+ &#xD;
+&#xD;
+var classToDomainAjaxAction = view.get(&quot;#classToDomainAjaxAction&quot;); &#xD;
+&#xD;
+classToDomainAjaxAction.set(&quot;parameter&quot;, parameter).execute(function(result) {&#xD;
+ &#xD;
+var json=JSON.parse(result);&#xD;
+view.get(&quot;#domainField&quot;).set(&quot;text&quot;,json.domainField);&#xD;
+view.get(&quot;#domainType&quot;).set(&quot;text&quot;,json.domainType);&#xD;
+view.get(&quot;#domainLabel&quot;).set(&quot;text&quot;,json.domainLabel);&#xD;
+dorado.widget.NotifyTipManager.notify(&quot;操作完成&quot;);&#xD;
+			});&#xD;
+			 </ClientEvent>
+          <Property name="caption">GO</Property>
+          <Property name="iconClass">fa-check-circle</Property>
+        </Button>
+      </Buttons>
+      <Children>
+        <Label>
+          <Property name="text">Java属性代码</Property>
+        </Label>
+        <TextArea id="classText"/>
+        <Label>
+          <Property name="text">Excel字段名称</Property>
+        </Label>
+        <TextArea id="domainField"/>
+        <Label>
+          <Property name="text">Excel字段类型</Property>
+        </Label>
+        <TextArea id="domainType"/>
+        <Label>
+          <Property name="text">Excel字段注释</Property>
+        </Label>
+        <TextArea id="domainLabel"/>
+      </Children>
+      <Tools/>
+    </Dialog>
+    <Dialog id="dialogSqlDomain" layout="vbox padding:15" layoutConstraint="padding:15">
+      <Property name="center">true</Property>
+      <Property name="width">800</Property>
+      <Property name="height">600</Property>
+      <Property name="modal">true</Property>
+      <Property name="closeable">true</Property>
+      <Property name="caption">数据编辑</Property>
+      <Property name="maximizeable">true</Property>
+      <Buttons>
+        <Button>
+          <ClientEvent name="onClick">var sqlText = view.get(&quot;#sqlText.text&quot;);&#xD;
+var fromProjectId = view.get(&quot;#fromForm.entity.projectId&quot;);&#xD;
+var toProjectId = view.get(&quot;#toForm.entity.projectId&quot;);&#xD;
+&#xD;
+var parameter = {&#xD;
+'sqlText' : sqlText,&#xD;
+'fromProjectId':fromProjectId,&#xD;
+'toProjectId':toProjectId&#xD;
+ };&#xD;
+ &#xD;
+&#xD;
+var sqlToDomainAjaxAction = view.get(&quot;#sqlToDomainAjaxAction&quot;); &#xD;
+&#xD;
+sqlToDomainAjaxAction.set(&quot;parameter&quot;, parameter).execute(function(result) { &#xD;
+dorado.widget.NotifyTipManager.notify(result);&#xD;
+			});&#xD;
+ &#xD;
+			&#xD;
+			&#xD;
+			&#xD;
+			&#xD;
+&#xD;
+</ClientEvent>
+          <Property name="caption">GO</Property>
+          <Property name="iconClass">fa-check-circle</Property>
+        </Button>
+      </Buttons>
+      <Children>
+        <FieldSet>
+          <Property name="caption">PROJECT</Property>
+          <Buttons/>
+          <Children>
+            <AutoForm id="fromForm">
+              <Property name="cols">*,*</Property>
+              <Property name="createPrivateDataSet">true</Property>
+              <Property name="dataType">Condition</Property>
+              <AutoFormElement>
+                <Property name="labelWidth">100</Property>
+                <Property name="label">from项目</Property>
+                <Property name="property">projectId</Property>
+                <Property name="name">projectId</Property>
+                <Editor/>
+              </AutoFormElement>
+            </AutoForm>
+            <AutoForm id="toForm">
+              <Property name="cols">*,*</Property>
+              <Property name="createPrivateDataSet">true</Property>
+              <Property name="dataType">Condition</Property>
+              <AutoFormElement>
+                <Property name="labelWidth">100</Property>
+                <Property name="label">to项目</Property>
+                <Property name="property">projectId</Property>
+                <Property name="name">projectId</Property>
+                <Editor/>
+              </AutoFormElement>
+            </AutoForm>
+          </Children>
+        </FieldSet>
+        <FieldSet>
+          <Property name="caption">SQL</Property>
+          <Buttons/>
+          <Children>
+            <TextArea id="sqlText">
+              <Property name="height">400</Property>
+            </TextArea>
+          </Children>
+        </FieldSet>
+      </Children>
+      <Tools/>
+    </Dialog>
+  </View>
+</ViewConfig>
